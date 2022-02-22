@@ -22,6 +22,7 @@ for (let item of elements[0].children) {
     const link = "#" + item.firstElementChild.name;
     // indent n times 4 spaces (considers h2 to be first, hence -2)
     const indent = tag.slice(-1) - 2
+    //TODO: SOLVE PROBLEMS WITH THE INDENTATION HERE WHEN H3 TOWRDS
     outputMarkDown += markDownIndentation.repeat(indent);
 
     // add index || subindex || letter || bullet point depending of the heading, starting with h2
