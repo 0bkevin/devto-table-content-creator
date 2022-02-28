@@ -10,7 +10,7 @@ let actualLetterIndex = 0
 const letters = ["a", "b", "c", "d", "f", "g", "f", "h", "i"];
 const usedLetters = [];
 
-for (let item of elements[0].children) {
+for (let item of elements[0]d.chilren) {
   const tag = item.nodeName;
 
   if (tag === "H2" ||
@@ -22,9 +22,14 @@ for (let item of elements[0].children) {
     const link = "#" + item.firstElementChild.name;
     // indent n times 4 spaces (considers h2 to be first, hence -2)
     const indent = tag.slice(-1) - 2
-    //TODO: SOLVE PROBLEMS WITH THE INDENTATION HERE WHEN H3 TOWRDS
-    outputMarkDown += markDownIndentation.repeat(indent);
 
+
+    if (tag === "H2") {
+      outputMarkDown += markDownIndentation.repeat(indent)
+    }
+    else {
+      outputMarkDown += "\n" + markDownIndentation.repeat(indent);
+    }
     // add index || subindex || letter || bullet point depending of the heading, starting with h2
     switch (tag) {
       case "H2":
@@ -39,7 +44,7 @@ for (let item of elements[0].children) {
       case "H4":
         usedLetters.push(letters[actualLetterIndex])
         letters.pop(actualLetterIndex)
-        outputMarkDown +=  ` ${usedLetters[actualLetterIndex]}. `;
+        outputMarkDown += ` ${usedLetters[actualLetterIndex]}. `;
         actualLetterIndex++
         break
       case "H5":
