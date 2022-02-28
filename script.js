@@ -10,7 +10,7 @@ let actualLetterIndex = 0
 const letters = ["a", "b", "c", "d", "f", "g", "f", "h", "i"];
 const usedLetters = [];
 
-for (let item of elements[0]d.chilren) {
+for (let item of elements[0].children) {
   const tag = item.nodeName;
 
   if (tag === "H2" ||
@@ -35,7 +35,7 @@ for (let item of elements[0]d.chilren) {
       case "H2":
         if (!orderedNumbers[indent]) actualIndex = orderedNumbers[indent] = 1
         actualIndex = orderedNumbers[indent]++
-        outputMarkDown += actualIndex + ". ";
+        outputMarkDown += "&nbsp;" + actualIndex + ". ";
         break
       case "H3":
         (actualSubIndex === 0) ? actualSubIndex = 1 : actualSubIndex++
