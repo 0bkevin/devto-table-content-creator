@@ -9,10 +9,10 @@ for (let item of markdownChildren) {
 	const indent = tag.slice(-1) - 2
 	outputMarkDown += "\t".repeat(indent);
   
-	if (indent % 2 === 0) {
-		outputMarkDown += "1. "
+	if (indent === 0) {
+		outputMarkDown += "1.  "
 	} else {
-		outputMarkDown += "-  "
+		outputMarkDown += "-   "
 	}
 	
 	const link = "#" + item.firstElementChild.name;
