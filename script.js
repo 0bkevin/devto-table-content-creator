@@ -8,7 +8,7 @@ for (let item of markdownChildren) {
 	// indent n times 4 spaces (considers h2 to be first, hence -2)
 	const indentLevel = tag.slice(-1) - 2;
 	const indent = "\t".repeat(indentLevel);
-	const index = (indent === 0) ? "1.  " : "-   ";
+	const index = (indentLevel === 0) ? "1.  " : "-   ";
 	
 	const headerId = "#" + item.firstElementChild.name;
 	const link = `[${item.textContent.trim()}](${headerId})`;
